@@ -86,6 +86,7 @@ function App() {
         <btton
           style={{
             backgroundColor: "white",
+            fontFamily: "sans-serif",
             color: "black",
             border: "none",
             padding: "10px 20px",
@@ -103,6 +104,9 @@ function App() {
         <button
           style={{
             border: "none",
+            backgroundColor: "white",
+            fontFamily: "sans-serif",
+            color: "black",
             padding: "10px 20px",
             cursor: "pointer",
             marginLeft: "10px",
