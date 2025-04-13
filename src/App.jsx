@@ -85,12 +85,12 @@ function App() {
       <div>
         <btton
           style={{
-            backgroundColor: "blue",
             color: "white",
             border: "none",
             padding: "10px 20px",
             cursor: "pointer",
             marginRight: "10px",
+            fontSize: "20px",
           }}
           onClick={goToPrevious}
           disabled={page === 1}
@@ -102,12 +102,12 @@ function App() {
         </span>
         <button
           style={{
-            backgroundColor: "blue",
             color: "white",
             border: "none",
             padding: "10px 20px",
             cursor: "pointer",
             marginRight: "10px",
+            fontSize: "20px",
           }}
           onClick={goToNext}
           disabled={page === totalPages}
