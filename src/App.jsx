@@ -61,6 +61,16 @@ function App() {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = items.slice(startIndex, endIndex);
   const totalPages = Math.ceil(items.length / itemsPerPage);
+  const goToPrevious = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+  const goToNext = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
 
   return (
     <div className="App">
@@ -73,23 +83,37 @@ function App() {
         ))}
       </ul>
       <div>
-        {[...Array(totalPages)].map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setPage(i + 1)}
-            style={{
-              margin: "0 5px",
-              padding: "5px 10px",
-              backgroundColor: page === i + 1 ? "#007bff" : "#f0f0f0",
-              color: page === i + 1 ? "#fff" : "#000",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            {i + 1}
-          </button>
-        ))}
+        <btton
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            cursor: "pointer",
+            marginRight: "10px",
+          }}
+          onClick={goToPrevious}
+          disabled={page === 1}
+        >
+          ⬅️ Previous
+        </btton>
+        <span>
+          Page {page} of {totalPages}
+        </span>
+        <button
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            cursor: "pointer",
+            marginRight: "10px",
+          }}
+          onClick={goToNext}
+          disabled={page === totalPages}
+        >
+          Next ➡️
+        </button>
       </div>
     </div>
   );
